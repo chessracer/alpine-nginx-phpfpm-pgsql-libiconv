@@ -22,6 +22,9 @@ RUN mkdir -p /var/log/supervisor
 RUN rm /etc/nginx/nginx.conf
 ADD nginx.conf /etc/nginx/nginx.conf
 
+RUN rm /etc/php/php.ini
+ADD php.ini /etc/php/php.ini
+
 RUN rm /etc/php/conf.d/opcache.ini
 
 VOLUME ["/var/www", "/etc/nginx/sites-enabled"]
