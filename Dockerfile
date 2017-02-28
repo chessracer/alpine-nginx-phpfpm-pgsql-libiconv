@@ -3,7 +3,6 @@ MAINTAINER Jonathan Baker <chessracer@gmail.com>
 
 RUN apk --update add \
   nginx \
-  nano \
   php-pgsql \
   php-fpm \
   php-pdo \
