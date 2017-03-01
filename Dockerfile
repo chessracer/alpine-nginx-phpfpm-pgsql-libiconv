@@ -1,8 +1,11 @@
 FROM orukami/alpine-php:5.6
 MAINTAINER Jonathan Baker <chessracer@gmail.com>
 
+ENV TERM xterm
+
 RUN apk --update add \
   nginx \
+  nano \
   php-pgsql \
   php-fpm \
   php-pdo \
