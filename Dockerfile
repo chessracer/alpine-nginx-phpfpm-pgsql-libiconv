@@ -13,6 +13,7 @@ RUN apk --update add \
   php-opcache \
   php-iconv \
   php-openssl \
+  php-curl \
   supervisor
 
 RUN mkdir -p /etc/nginx
