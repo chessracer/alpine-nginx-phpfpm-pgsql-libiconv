@@ -17,7 +17,12 @@ RUN apk --update add \
   php-iconv \
   php-openssl \
   php-curl \
+  py-pip \
   supervisor
+
+# Configure supervisor
+RUN pip install --upgrade pip && \
+    pip install supervisor-stdout
 
 RUN mkdir -p /etc/nginx
 RUN mkdir -p /run/nginx
@@ -36,7 +41,7 @@ VOLUME ["/var/www", "/etc/nginx/sites-enabled"]
 
 ADD nginx-supervisor.ini /etc/supervisor.d/nginx-supervisor.ini
 ENV TIMEZONE America/Los_Angeles
- 
+
 RUN ln -sf /dev/stderr /var/log/nginx/error.log
 RUN ln -sf /dev/stdout /var/log/nginx/access.log
 
