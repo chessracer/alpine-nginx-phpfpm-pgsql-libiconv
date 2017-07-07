@@ -35,6 +35,9 @@ ADD nginx.conf /etc/nginx/nginx.conf
 RUN rm /etc/php/php.ini
 ADD php.ini /etc/php/php.ini
 
+RUN rm /etc/php/php-fpm.conf
+ADD php-fpm.conf /etc/php/php-fpm.conf
+
 RUN rm /etc/php/conf.d/opcache.ini
 
 VOLUME ["/var/www", "/etc/nginx/sites-enabled"]
